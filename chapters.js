@@ -163,7 +163,7 @@ telemetry.addEventListener('animationiteration', event => {
   readout.append(reading);
   readout.animate(
     [{ transform: 'translateY(var(--terminal-packet-height))' }, { transform: 'translateY(0)' }],
-    { duration: 280, easing: 'cubic-bezier(.25, .75, .3, 1)' }
+    { duration: 175, easing: 'cubic-bezier(.25, .75, .3, 1)' }
   );
 });
 

@@ -196,17 +196,18 @@ h2 { font-size: clamp(3rem, 6vw, 5.55rem); }
   .school { margin-block: 1.1rem 1.4rem; }
 }
 @media (prefers-reduced-motion: no-preference) {
+  .telemetry { --demo-packet-period: .5s; }
   .has-scroll-effects .signal-pulse {
-    animation: telemetry-flow 3s linear infinite paused;
+    animation: telemetry-flow calc(3 * var(--demo-packet-period)) linear infinite paused;
   }
-  .has-scroll-effects .signal-pulse:nth-child(2) { animation-delay: -1s; }
-  .has-scroll-effects .signal-pulse:nth-child(3) { animation-delay: -2s; }
+  .has-scroll-effects .signal-pulse:nth-child(2) { animation-delay: calc(-1 * var(--demo-packet-period)); }
+  .has-scroll-effects .signal-pulse:nth-child(3) { animation-delay: calc(-2 * var(--demo-packet-period)); }
   .is-streaming .signal-pulse { animation-play-state: running; }
-  .terminal-new p { animation: terminal-print 230ms steps(20, end) 90ms both; }
-  .terminal-new p:nth-child(2) { animation-delay: 170ms; }
-  .terminal-new p:nth-child(3) { animation-delay: 250ms; }
-  .terminal-new p:nth-child(4) { animation-delay: 330ms; }
-  .terminal-new p:nth-child(5) { animation-delay: 410ms; }
+  .terminal-new p { animation: terminal-print 150ms steps(20, end) 55ms both; }
+  .terminal-new p:nth-child(2) { animation-delay: 100ms; }
+  .terminal-new p:nth-child(3) { animation-delay: 145ms; }
+  .terminal-new p:nth-child(4) { animation-delay: 190ms; }
+  .terminal-new p:nth-child(5) { animation-delay: 235ms; }
   @keyframes telemetry-flow {
     from { cx: 0; opacity: 0; }
     8%, 92% { opacity: 1; }
